@@ -1,4 +1,4 @@
-# Testin a meteo api with vue
+# Testing a meteo api with vue
 
 ## Organisation
 
