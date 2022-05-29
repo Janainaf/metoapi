@@ -10,7 +10,6 @@ const weather = require("./weatherUtils")
 let insee =  []  
 let insee2 = []
 let final = []
-// let tests = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 // Initialisation de la base avec les deux tables nécessaires (à garder)
 db.init();
 db.all('select insee, population from city').then((data) => {
@@ -29,7 +28,7 @@ async function test() {
     // db.run(`insert into forecast (date, insee, details) VALUES \
     // ("${response.data.forecast[0].datetime}", ${insee2[id]}, "${response.data.forecast[0].weather}")
     // `) 
-    // ***** Select and convert to varchar?
+    // ***** Problem creating table with Insee 2A004", "AJACCIO" - varchar?
 }
 catch (e) {
   console.log(e)
@@ -67,18 +66,6 @@ app.get('/', (req, res) => {
     }
     else console.log(err);
   });
-
-  // wo queries in one call to 
-
-// db.all('select insee, name, population from city').then((rows) => {
-//   const forecast =   db.all('select * from forecast').then((rows) => {
-//     return rows})
-//   return res.send({
-//     test: final,
-//     table: rows,
-//     forecast: forecast, d
-// })
-// });
 })
 
 
